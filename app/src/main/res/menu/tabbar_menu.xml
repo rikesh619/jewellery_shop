@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab_bar_home"
+        android:icon="@mipmap/home_ic"
+        android:title="@string/tab_bar_home"
+        android:checked="true"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/tab_bar_favorites"
+        android:icon="@mipmap/favorites_ic"
+        android:title="@string/tab_bar_favorites"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/tab_bar_news"
+        android:icon="@mipmap/news_ic"
+        android:title="@string/tab_bar_news"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/tab_bar_myprofile"
+        android:icon="@mipmap/myprofile_ic"
+        android:title="My Profile"
+        android:checkable="true"/>
+
+</menu>

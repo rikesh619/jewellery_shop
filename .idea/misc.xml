@@ -4,6 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/JewelleryShop/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/drawable/oval_shape.xml" value="0.16" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/drawable/rectangle_shape.xml" value="0.1" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/drawable/round_shape.xml" value="0.142" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/activity_home.xml" value="0.176" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/activity_splash.xml" value="0.16799999999999998" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/fragment_home.xml" value="0.27007299270072993" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/item_preview.xml" value="0.12" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/items_categories_list.xml" value="0.4265129682997118" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/items_categories_recycler.xml" value="0.6" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/latest_collection_list.xml" value="0.6" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/latest_collection_recyclerview.xml" value="0.24895833333333334" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/layout/special_edition_list.xml" value="0.4" />
+        <entry key="..\:/kot/JewelleryShop/app/src/main/res/menu/tabbar_menu.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/app_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/kalnia_semibold"
+                android:maxLines="1"
+                android:text="JEWELLERY"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/search_ic"
+                        app:tint="#B5B5B5" />
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_engine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:defaultQueryHint="Search Jewellery"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@color/white"
+                        app:searchIcon="@null" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/search_filter"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:src="@mipmap/shopping_bag_ic" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/items_categories_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/wedding_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/source_serif_pro_semibold"
+                android:maxLines="2"
+                android:text="Wedding Day Discount"
+                android:textSize="30sp"
+                android:textStyle="italic" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="75dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#D3D3D3"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:text="See collection"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/source_serif_pro_regular"
+                android:maxLines="1"
+                android:text="Valid until 30 November 2023"
+                android:textColor="@color/white"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Latest Edition"
+            android:textSize="16sp"
+            android:fontFamily="@font/source_serif_pro_regular"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:layout_marginStart="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/latest_edition_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Special Edition"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/source_serif_pro_regular"
+            android:textStyle="italic"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colaboration Fineperks x Pearlion"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/source_serif_pro_regular"
+            android:textStyle="italic"
+            android:layout_marginStart="15dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/special_edition_recylerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</ScrollView>

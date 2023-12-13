@@ -10,5 +10,7 @@
 
     <color name="full_transparent">#00FFFFFF</color>
     <color name="off_white">#FAF9F6</color>
+    <color name="blue_sapphire">#065774</color>
+    <color name="items_categories_bg">#C59975</color>
 
 </resources>

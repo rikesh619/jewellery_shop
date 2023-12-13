@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">JewelleryShop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_bar_favorites">Favorites</string>
+    <string name="tab_bar_home">Home</string>
+    <string name="tab_bar_news">News</string>
+    <string name="see_collection">See Collection</string>
 </resources>
