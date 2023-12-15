@@ -11,4 +11,23 @@
         android:label="@string/tab_home"
         tools:layout="@layout/fragment_home"/>
 
+    <fragment
+        android:id="@+id/tab_bar_favorites"
+        android:name="com.smartherd.jewelleryshop.tabbar.FavoritesFragment"
+        android:label="@string/tab_favorites"
+        tools:layout="@layout/fragment_favorites"/>
+
+    <fragment
+        android:id="@+id/tab_bar_news"
+        android:name="com.smartherd.jewelleryshop.tabbar.NewsFragment"
+        tools:layout="@layout/fragment_news"
+        android:label="@string/tab_news"/>
+
+    <fragment
+        android:id="@+id/tab_bar_myprofile"
+        android:name="com.smartherd.jewelleryshop.tabbar.MyProfileFragment"
+        android:label="My Profile"
+        tools:layout="@layout/fragment_my_profile"/>
+
+
 </navigation>

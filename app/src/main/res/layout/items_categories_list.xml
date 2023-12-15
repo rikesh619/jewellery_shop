@@ -13,6 +13,7 @@
         android:background="@drawable/round_shape">
 
         <ImageView
+            android:id="@+id/item_categories_img"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
@@ -24,6 +25,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
+        android:id="@+id/item_categories_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Rings"

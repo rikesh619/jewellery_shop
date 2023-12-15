@@ -28,6 +28,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/kalnia_semibold"
                 android:maxLines="1"
+                android:letterSpacing="0.10"
                 android:text="JEWELLERY"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -46,6 +47,7 @@
                 android:layout_height="30dp"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/white"
                 app:cardElevation="8dp">
 
                 <LinearLayout
@@ -106,7 +108,7 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/source_serif_pro_semibold"
                 android:maxLines="2"
-                android:text="Wedding Day Discount"
+                android:text="Wedding Day \n Discount"
                 android:textSize="30sp"
                 android:textStyle="italic" />
 
