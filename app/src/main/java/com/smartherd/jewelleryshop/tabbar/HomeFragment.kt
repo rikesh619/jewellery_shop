@@ -1,5 +1,6 @@
 package com.smartherd.jewelleryshop.tabbar
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.smartherd.jewelleryshop.R
+import com.smartherd.jewelleryshop.activity.ProductDetailActivity
+import com.smartherd.jewelleryshop.activity.TipsTestimonialActivity
 import com.smartherd.jewelleryshop.adapter.CategoriesItemListAdapter
 import com.smartherd.jewelleryshop.adapter.LatestEditionAdapter
 import com.smartherd.jewelleryshop.adapter.SpecialEditionAdapter
@@ -30,8 +33,21 @@ class HomeFragment : Fragment() {
         itemCategoriesRecycler()
         latestEditionRecycler()
         specialEditionRecycler()
+        dummyProductDetailClick()
 
         return binding.root
+    }
+
+    private fun dummyProductDetailClick(){
+        binding.dummyClick.setOnClickListener {
+            val intent = Intent(requireContext() , ProductDetailActivity :: class.java)
+            requireContext().startActivity(intent)
+        }
+
+        binding.dummyTipsClick.setOnClickListener {
+            val intent = Intent(requireContext() , TipsTestimonialActivity :: class.java)
+            requireContext().startActivity(intent)
+        }
     }
 
     private fun itemCategoriesRecycler() {

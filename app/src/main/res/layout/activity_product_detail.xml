@@ -1,11 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blac_vignette_bg"
     tools:context=".activity.ProductDetailActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/search_ic"
+                        app:tint="#B5B5B5" />
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_engine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:defaultQueryHint="Search Jewellery"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@color/white"
+                        app:searchIcon="@null" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/search_filter"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:src="@mipmap/shopping_bag_ic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/item_img_product_detail"
+                android:layout_width="330dp"
+                android:layout_height="330dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pngwing" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="-70dp"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/items_categories_bg"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:text="4.2"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:layout_width="75dp"
+                            android:layout_height="15dp"
+                            android:scaleType="fitXY"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="5dp"
+                            android:src="@mipmap/star_ic" />
+
+                    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="(347 Reviews)"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/source_serif_pro_regular"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="The Beatrice Ring"
+            android:textSize="34sp"
+            android:fontFamily="@font/source_serif_pro_regular"
+            android:textColor="@color/black"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Sterling Silver, Cubic Zirconia"
+            android:textColor="@color/items_categories_bg"
+            android:fontFamily="@font/source_serif_pro_regular"
+            android:textSize="16sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="$ 4,700"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/source_serif_pro_semibold"/>
+
+
+    </LinearLayout>
+</ScrollView>
