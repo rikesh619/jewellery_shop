@@ -5,7 +5,7 @@
     android:layout_width="115dp"
     android:layout_height="210dp"
     android:layout_marginTop="10dp"
-    android:layout_marginStart="10dp">
+    android:layout_marginStart="15dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -36,6 +36,7 @@
         android:layout_width="55dp"
         android:layout_height="15dp"
         app:cardCornerRadius="10dp"
+        android:layout_marginStart="5dp"
         android:backgroundTint="@color/items_categories_bg"
         android:layout_marginTop="10dp">
 
@@ -46,7 +47,6 @@
             android:text="Read More"
             android:textSize="8sp"
             android:textColor="@color/white"
-            android:layout_marginStart="5dp"
             android:layout_gravity="center"
             android:fontFamily="@font/source_serif_pro_regular"/>
 
