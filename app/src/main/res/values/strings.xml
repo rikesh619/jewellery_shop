@@ -9,4 +9,5 @@
     <string name="see_collection">See Collection</string>
     <string name="tab_favorites">Favorites</string>
     <string name="tab_news">News</string>
+    <string name="skip_to_browsing"><b> Skip </b> to browsing !</string>
 </resources>

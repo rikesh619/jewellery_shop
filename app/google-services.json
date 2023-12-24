@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1039815695116",
+    "project_id": "br-jewels",
+    "storage_bucket": "br-jewels.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039815695116:android:0513d8c90c21de12a9c729",
+        "android_client_info": {
+          "package_name": "com.smartherd.jewelleryshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO3oTicBNbyY0kgTFV_1kLhxNcymVRkBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

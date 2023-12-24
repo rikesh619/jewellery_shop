@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
 import com.smartherd.jewelleryshop.R
 import com.smartherd.jewelleryshop.activity.ProductDetailActivity
 import com.smartherd.jewelleryshop.activity.TipsTestimonialActivity
@@ -22,7 +26,9 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
+    private lateinit var adapter: CategoriesItemListAdapter
     private val binding get() = _binding!!
+    private var db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,34 +44,41 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    private fun dummyProductDetailClick(){
+    private fun dummyProductDetailClick() {
         binding.dummyClick.setOnClickListener {
-            val intent = Intent(requireContext() , ProductDetailActivity :: class.java)
+            val intent = Intent(requireContext(), ProductDetailActivity::class.java)
             requireContext().startActivity(intent)
         }
 
         binding.dummyTipsClick.setOnClickListener {
-            val intent = Intent(requireContext() , TipsTestimonialActivity :: class.java)
+            val intent = Intent(requireContext(), TipsTestimonialActivity::class.java)
             requireContext().startActivity(intent)
         }
     }
 
     private fun itemCategoriesRecycler() {
-        val itemList = ArrayList<ItemCategoriesModel>()
+        val itemList = mutableListOf<ItemCategoriesModel>()
 
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
-        itemList.add(ItemCategoriesModel(R.drawable.pngwing, "Rings"))
+        db = FirebaseFirestore.getInstance()
+        db.collection("categories").get()
+            .addOnSuccessListener {
+                for (data in it.documents) {
+                    val image = data.getString("image_name") ?: ""
+                    val imageName = data.getString("name") ?: ""
 
-        binding.itemsCategoriesRecycler.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val adapter = CategoriesItemListAdapter(requireContext(), itemList)
-        binding.itemsCategoriesRecycler.adapter = adapter
+                    val categories = ItemCategoriesModel(image, imageName)
+                    itemList.add(categories)
+                }
+                adapter = CategoriesItemListAdapter(requireContext(), itemList)
+                binding.itemsCategoriesRecycler.adapter = adapter
+                binding.itemsCategoriesRecycler.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+
     }
 
     private fun latestEditionRecycler() {
@@ -92,24 +105,24 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun specialEditionRecycler(){
+    private fun specialEditionRecycler() {
         val itemList = ArrayList<SpecialEditionModel>()
 
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
-        itemList.add(SpecialEditionModel(R.drawable.pngwing , "Ring" , "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
+        itemList.add(SpecialEditionModel(R.drawable.pngwing, "Ring", "$80000"))
 
 
         binding.specialEditionRecylerview.layoutManager =

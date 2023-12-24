@@ -84,7 +84,7 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="-70dp"
                 android:layout_marginEnd="50dp"
-                android:backgroundTint="@color/items_categories_bg"
+                android:backgroundTint="#D6B89E"
                 app:cardCornerRadius="5dp">
 
                 <LinearLayout

@@ -2,13 +2,17 @@ package com.smartherd.jewelleryshop.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.storage
 import com.smartherd.jewelleryshop.databinding.ItemsCategoriesListBinding
 import com.smartherd.jewelleryshop.models.ItemCategoriesModel
 
-class CategoriesItemListAdapter(val context: Context, val itemList: ArrayList<ItemCategoriesModel>) :
+class CategoriesItemListAdapter(val context: Context, val itemList: List<ItemCategoriesModel>) :
     RecyclerView.Adapter<CategoriesItemListAdapter.ViewHolder>() {
 
 
@@ -25,8 +29,20 @@ class CategoriesItemListAdapter(val context: Context, val itemList: ArrayList<It
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.itemCategoriesImg.setImageResource(itemList[position].image)
-        holder.binding.itemCategoriesName.text = itemList[position].itemName
+        val categoriesData = itemList[position]
+
+        val storageRef = Firebase.storage.reference.child("Categories/${categoriesData.image_name}.png")
+
+        storageRef.downloadUrl.addOnSuccessListener {
+
+            Glide.with(holder.itemView.context)
+                .load(it)
+                .into(holder.binding.itemCategoriesImg)
+        }.addOnFailureListener {
+            Toast.makeText(holder.itemView.context , it.toString() , Toast.LENGTH_SHORT).show()
+
+        }
+        holder.binding.itemCategoriesName.text = categoriesData.name
 
     }
 
