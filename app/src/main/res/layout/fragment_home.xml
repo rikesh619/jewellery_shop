@@ -28,8 +28,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:fontFamily="@font/kalnia_semibold"
-                android:maxLines="1"
                 android:letterSpacing="0.15"
+                android:maxLines="1"
                 android:text="JEWELLERY"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -88,6 +88,308 @@
                 android:src="@mipmap/shopping_bag_ic" />
 
         </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#6A492C"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/todays_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/kalni_light"
+                    android:textColor="@color/white"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/source_serif_pro_bold"
+                    android:gravity="center"
+                    android:letterSpacing="0.10"
+                    android:text="Todays Rate"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:text="Nrs."
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@mipmap/gold_ic" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/source_serif_pro_regular"
+                                android:paddingStart="10dp"
+                                android:text="Gold"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@mipmap/gold_ic" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/source_serif_pro_regular"
+                                android:paddingStart="10dp"
+                                android:text="Gold"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@mipmap/silver_ic" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/source_serif_pro_regular"
+                                android:paddingStart="10dp"
+                                android:text="Silver"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:text="Type"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/hallmark_gold_quality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tejabi_gold_quality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/hallmark_silver_quality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="9dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:text="10g"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/pure_gold_gram"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tejabi_gold_gram"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/silver_gram"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="9dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:text="Tola"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/pure_gold_tola"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tejabi_gold_tola"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/silver_tola"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="9dp"
+                            android:fontFamily="@font/source_serif_pro_regular"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/items_categories_recycler"
@@ -149,50 +451,49 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Latest Edition"
-            android:textSize="16sp"
+            android:layout_marginStart="15dp"
             android:fontFamily="@font/source_serif_pro_regular"
+            android:text="Latest Edition"
             android:textColor="@color/black"
-            android:textStyle="italic"
-            android:layout_marginStart="15dp"/>
+            android:textSize="16sp"
+            android:textStyle="italic" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/latest_edition_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="15dp"/>
-
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp" />
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Special Edition"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
-            android:textSize="10sp"
-            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/source_serif_pro_regular"
-            android:textStyle="italic"/>
+            android:text="Special Edition"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="italic" />
 
 
         <TextView
             android:id="@+id/dummy_tips_click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/source_serif_pro_regular"
             android:text="Colaboration Fineperks x Pearlion"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:fontFamily="@font/source_serif_pro_regular"
-            android:textStyle="italic"
-            android:layout_marginStart="15dp" />
+            android:textStyle="italic" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/special_edition_recylerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 </ScrollView>

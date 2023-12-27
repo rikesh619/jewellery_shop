@@ -18,6 +18,7 @@ import com.smartherd.jewelleryshop.adapter.CategoriesItemListAdapter
 import com.smartherd.jewelleryshop.adapter.LatestEditionAdapter
 import com.smartherd.jewelleryshop.adapter.SpecialEditionAdapter
 import com.smartherd.jewelleryshop.databinding.FragmentHomeBinding
+import com.smartherd.jewelleryshop.models.DailyRatesUpdateModel
 import com.smartherd.jewelleryshop.models.ItemCategoriesModel
 import com.smartherd.jewelleryshop.models.LatestEditionModel
 import com.smartherd.jewelleryshop.models.SpecialEditionModel
@@ -25,8 +26,6 @@ import com.smartherd.jewelleryshop.models.SpecialEditionModel
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    private lateinit var adapter: CategoriesItemListAdapter
     private val binding get() = _binding!!
     private var db = Firebase.firestore
 
@@ -40,6 +39,7 @@ class HomeFragment : Fragment() {
         latestEditionRecycler()
         specialEditionRecycler()
         dummyProductDetailClick()
+        RateUpdates()
 
         return binding.root
     }
@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
                     val categories = ItemCategoriesModel(image, imageName)
                     itemList.add(categories)
                 }
-                adapter = CategoriesItemListAdapter(requireContext(), itemList)
+                val adapter = CategoriesItemListAdapter(requireContext(), itemList)
                 binding.itemsCategoriesRecycler.adapter = adapter
                 binding.itemsCategoriesRecycler.layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -78,6 +78,61 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
             }
 
+
+    }
+
+    private fun RateUpdates() {
+        db = Firebase.firestore
+
+
+        db.collection("today_rate").document("PxlmxfwNwvEUxBrGEXUY").get()
+            .addOnSuccessListener {
+                if (it != null && it.exists()) {
+                    val rate = it.toObject(DailyRatesUpdateModel::class.java)
+
+                    if (rate != null) {
+                        val date = rate.date?.toDate()
+                        val formattedDate = date?.toString()
+
+                        binding.todaysDate.text = formattedDate
+
+                        //Gold Rates Updates
+                        rate.gold?.forEachIndexed { index, goldModel ->
+                            if (index == 0) {
+                                binding.hallmarkGoldQuality.text = goldModel.quality
+                                binding.pureGoldTola.text = goldModel.price.toString()
+                            } else if (index == 1) {
+                                binding.tejabiGoldQuality.text = goldModel.quality
+                                binding.tejabiGoldTola.text = goldModel.price.toString()
+                            } else if (index == 2) {
+                                binding.pureGoldGram.text = goldModel.price.toString()
+                            } else if (index == 3) {
+                                binding.tejabiGoldGram.text = goldModel.price.toString()
+                            } else {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Sorry ! No Data Has Been Found",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+
+                        // Silver Rates Updates
+
+                        rate.silver?.forEachIndexed { index, silverModel ->
+                            if (index == 0 ){
+                                binding.hallmarkSilverQuality.text = silverModel.quality
+                                binding.silverTola.text = silverModel.price.toString()
+                            }else if (index == 1){
+                                binding.silverGram.text = silverModel.price.toString()
+                            }
+                        }
+
+
+                    }
+                }
+            }
+            .addOnFailureListener { }
 
     }
 
